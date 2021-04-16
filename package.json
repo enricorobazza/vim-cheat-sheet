@@ -1,0 +1,62 @@
+{
+  "name": "custom-view-samples",
+  "displayName": "Custom view Samples",
+  "description": "Samples for VSCode's view API",
+  "version": "0.0.1",
+  "publisher": "vscode-samples",
+  "enableProposedApi": true,
+  "engines": {
+    "vscode": "^1.52.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onView:vimCheatSheet"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "vim-cheat-sheet",
+          "title": "Vim Cheat Sheet",
+          "icon": "media/vim.svg"
+        }
+      ]
+    },
+    "views": {
+      "vim-cheat-sheet": [
+        {
+          "id": "vimCheatSheet",
+          "name": "Vim Cheat Sheet",
+          "icon": "media/vim.svg",
+          "contextualTitle": "Vim Cheat Sheet"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint . --ext .ts,.tsx"
+  },
+  "devDependencies": {
+    "@types/mkdirp": "^0.5.2",
+    "@types/node": "^12.12.0",
+    "@types/rimraf": "^2.0.2",
+    "@types/vscode": "^1.45.0",
+    "@typescript-eslint/eslint-plugin": "^4.16.0",
+    "@typescript-eslint/parser": "^4.16.0",
+    "eslint": "^7.21.0",
+    "typescript": "^4.2.2"
+  },
+  "dependencies": {
+    "jsonc-parser": "^0.4.2",
+    "ftp": "^0.3.10",
+    "mkdirp": "^0.5.1",
+    "rimraf": "^2.6.2",
+    "minimist": "^0.2.1"
+  }
+}
